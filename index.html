@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Défis RSV entre amis</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container" id="authContainer">
+        <h2>Connexion / Inscription</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button id="signupBtn">S'inscrire</button>
+        <button id="loginBtn">Se connecter</button>
+    </div>
+
+    <div class="container hidden" id="appContainer">
+        <h1>Bienvenue <span id="userName"></span></h1>
+
+        <form id="challengeForm">
+            <input type="text" id="challengeInput" placeholder="Ajouter un défi..." required>
+            <button type="submit">Ajouter</button>
+        </form>
+
+        <ul id="challengeList"></ul>
+
+        <button id="drawChallengeBtn">🎲 Tirer un défi</button>
+        <div id="selectedChallenge">Aucun défi tiré pour le moment.</div>
+
+        <h3>👥 Utilisateurs connectés</h3>
+        <ul id="connectedUsers"></ul>
+
+        <button id="logoutBtn" class="logout">Se déconnecter</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

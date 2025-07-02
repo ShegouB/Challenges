@@ -1,0 +1,188 @@
+/* ====== GLOBAL ====== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg, #0e0e10, #001e3c, #0e0e10, #001e3c);
+    background-size: 800% 800%;
+    animation: gradientShift 30s ease infinite;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ====== CONTAINERS ====== */
+.container {
+    background-color: #1c1c22;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.08);
+    width: 100%;
+    max-width: 550px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ====== HEADERS ====== */
+h1, h2, h3 {
+    color: #00ffff;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+/* ====== INPUTS & BUTTONS ====== */
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+input {
+    background-color: #292932;
+    color: #fff;
+    border: 1px solid #00ffff40;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    background-color: #00ffff;
+    color: #0e0e10;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00ffff60;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00e0e0;
+    box-shadow: 0 0 12px #00ffffaa;
+    transform: scale(1.02);
+}
+
+button.logout {
+    background-color: #ff3b3b;
+    box-shadow: none;
+}
+
+button.logout:hover {
+    background-color: #ff1f1f;
+}
+
+/* ====== CHALLENGE LIST ====== */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    position: relative;  /* pour bouton supprimer */
+    background-color: #24242a;
+    padding: 12px 40px 12px 12px; /* espace à droite pour bouton */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #eaeaea;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color: #2d2d35;
+}
+
+li button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background-color: #ff3b3b;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 8px #ff3b3baa;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+li button:hover {
+    background-color: #ff1f1f;
+    box-shadow: 0 0 12px #ff1f1fcc;
+}
+
+/* ====== SELECTED CHALLENGE ====== */
+#selectedChallenge {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ffaa;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 12px; /* réduire espace pour bouton sur mobile */
+    }
+
+    li button {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        margin-top: 8px;
+        box-shadow: none;
+        line-height: normal;
+        align-self: flex-end;
+    }
+}
