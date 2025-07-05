@@ -67,11 +67,3 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
-
-apiKey: "AIzaSyA3kU6OZwTJGDoLLgcDI0iPyxCQXu-PoeU",
-authDomain: "challenges-rsv.firebaseapp.com",
-projectId: "challenges-rsv",
-storageBucket: "challenges-rsv.firebasestorage.app",
-messagingSenderId: "48484358922",
-appId: "1:48484358922:web:09a42733e88e53d7fb38f3",
-measurementId: "G-CCDL6VJV21"
